@@ -1,0 +1,139 @@
+
+<nav class="skn-review-tabs">
+    <div class="nav nav-tabs" role="tablist">
+        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-selected="true">Workflow</button>
+        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#mandatory" type="button" role="tab" aria-selected="false">Rules</button>
+    </div>
+</nav>
+
+<div class="tab-content skn-tab-content">
+
+    <div class="tab-pane fade show active" id="all" role="tabpanel" tabindex="0">
+
+        <div class="skn-add-doctype-cnt"><button type="button" class="skn-filled-btn d-block ms-auto">ADD NEW WORKFLOW</button></div>
+
+        <div class="skn-table-cnt">
+            <table id="sknConfigTable" datatable class="skn-table">
+                <thead>
+                    <tr>
+                        <th>Boolean Workflow</th>
+                        <th>Document Type</th>
+                        <th>Destination</th>
+                        <th>Workflow Name</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>DoV_Earlierto_DOB</td>
+                        <td>Medical Review Form</td>
+                        <td>Analyst L2</td>
+                        <td>Date Check</td>
+                        <td>
+                            <div class="form-check form-switch skn-switch-green">
+                                <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch">
+                            </div>
+                        </td>
+                        <td><a href="#"><img src="../assets/images/icon-edit.svg" class="skn-config-edit-icon me-3"/></a><a href="#"><img src="../assets/images/icon-trash.svg" class="skn-config-edit-icon"/></a></td>
+                    </tr>
+                    <tr>
+                        <td>BLRStation</td>
+                        <td>Airway Bill - Visa Manifest Report</td>
+                        <td>Target</td>
+                        <td>Skip QC for BLR Station</td>
+                        <td>
+                            <div class="form-check form-switch skn-switch-green">
+                                <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                            </div>
+                        </td>
+                        <td><a href="#"><img src="../assets/images/icon-edit.svg" class="skn-config-edit-icon me-3"/></a><a href="#"><img src="../assets/images/icon-trash.svg" class="skn-config-edit-icon"/></a></td>
+                    </tr>
+                    <tr>
+                        <td>AmountGT100</td>
+                        <td>Invoice</td>
+                        <td>Analyst L2</td>
+                        <td>InvoiceGT GBP100</td>
+                        <td>
+                            <div class="form-check form-switch skn-switch-green">
+                                <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch">
+                            </div>
+                        </td>
+                        <td><a href="#"><img src="../assets/images/icon-edit.svg" class="skn-config-edit-icon me-3"/></a><a href="#"><img src="../assets/images/icon-trash.svg" class="skn-config-edit-icon"/></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- ==================================================================== table-ends-here ======================================================== -->
+    </div>
+    <!--===========================================================================================-->
+
+    <div class="tab-pane fade" id="mandatory" role="tabpanel" tabindex="0">
+
+        <div class="skn-add-doctype-cnt"><button type="button" class="skn-filled-btn d-block ms-auto">ADD NEW RULE</button></div>
+
+        <div class="skn-table-cnt">
+            <table id="table_2110221500" datatable class="skn-table">
+                <thead>
+                    <tr>
+                        <th>Rule Name</th>
+                        <th>Primary Attribute</th>
+                        <th>Condition</th>
+                        <th>Secondary Attribute</th>
+                        <th>Value</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>&le;</td>
+                        <td>Lorem ipsum</td>
+                        <td></td>
+                        <td>
+                            <div class="form-check form-switch skn-switch-green">
+                                <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                            </div>
+                        </td>
+                        <td><a href="#"><img src="../assets/images/icon-edit.svg" class="skn-config-edit-icon me-3"/></a><a href="#"><img src="../assets/images/icon-trash.svg" class="skn-config-edit-icon"/></a></td>
+                    </tr>
+                    <tr>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>&le;</td>
+                        <td>Lorem ipsum</td>
+                        <td>200000000</td>
+                        <td>
+                            <div class="form-check form-switch skn-switch-green">
+                                <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                            </div>
+                        </td>
+                        <td><a href="#"><img src="../assets/images/icon-edit.svg" class="skn-config-edit-icon me-3"/></a><a href="#"><img src="../assets/images/icon-trash.svg" class="skn-config-edit-icon"/></a></td>
+                    </tr>
+                    <tr>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>&le;</td>
+                        <td>Lorem ipsum</td>
+                        <td>200000000</td>
+                        <td>
+                            <div class="form-check form-switch skn-switch-green">
+                                <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                            </div>
+                        </td>
+                        <td><a href="#"><img src="../assets/images/icon-edit.svg" class="skn-config-edit-icon me-3"/></a><a href="#"><img src="../assets/images/icon-trash.svg" class="skn-config-edit-icon"/></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- ==================================================================== table-ends-here ======================================================== -->
+
+    </div>
+    <!--===========================================================================================-->
+
+</div>
+<!-- ============================================================== tabs-ends-here ================================================================== -->
+
+   

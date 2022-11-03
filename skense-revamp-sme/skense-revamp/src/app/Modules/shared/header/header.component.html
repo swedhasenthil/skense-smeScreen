@@ -1,0 +1,124 @@
+<div class="skn-header" *ngIf="router.url != '/login'">
+    <div class="skn-header-logo-bar">
+        <a routerLink="/analyst" *ngIf="router.url === '/analyst/reports'"><img src="../../assets/images/header-arrow-left.svg"/></a>
+        <a (click)="reloadCurrentPage()" *ngIf="displayList == 'false'"><img src="../../assets/images/header-arrow-left.svg"/></a>
+        <img src="../../assets/images/skense-logo.svg" class="skn-header-logo"/>
+        <img src="../../assets/images/nestle-logo.svg" class="skn-header-cobranding"/>
+    </div>
+    <div class="skn-header-nav" *ngIf="roleSme === 'SME'">
+        <a routerLink="/analyst/my-work" class="skn-header-nav-navitem-active" *ngIf="router.url === '/analyst/my-work'">My Work</a>
+        <a routerLink="/analyst/my-work" class="skn-header-nav-navitem" *ngIf="router.url != '/analyst/my-work'">My Work</a>
+        <a routerLink="/analyst/reports" class="skn-header-nav-navitem" *ngIf="router.url != '/analyst/reports'">Reports</a>
+        <a routerLink="/analyst/reports" class="skn-header-nav-navitem-active" *ngIf="router.url === '/analyst/reports'">Reports</a>
+    </div>
+    <div class="skn-header-nav"  >
+        <a routerLink="/sme/configure-projects" class="skn-header-nav-navitem-active" *ngIf="router.url === '/sme/configure-projects'">Configure Projects</a>
+        <a routerLink="/sme/configure-projects" class="skn-header-nav-navitem" *ngIf="router.url != '/sme/configure-projects'">Configure Projects</a>
+        <a routerLink="/sme/calibrate-documents" class="skn-header-nav-navitem-active" *ngIf="router.url === '/sme/configure-documents'">Calibrate Documents</a>
+        <a routerLink="/sme/calibrate-documents" class="skn-header-nav-navitem" *ngIf="router.url != '/sme/configure-documents'">Calibrate Documents</a>
+        <a routerLink="/sme/reference-data-management" class="skn-header-nav-navitem-active"  *ngIf="router.url === '/sme/reference-data-management'">Reference Data Management</a>
+        <a routerLink="/sme/reference-data-management" class="skn-header-nav-navitem"  *ngIf="router.url != '/sme/reference-data-management'">Reference Data Management</a>
+        <a  routerLink="/sme/cognitive-apis" class="skn-header-nav-navitem-active"  *ngIf="router.url === '/sme/cognitive-apis'">Cognitive APIs</a>
+        <a  routerLink="/sme/cognitive-apis" class="skn-header-nav-navitem"  *ngIf="router.url != '/sme/cognitive-apis'">Cognitive APIs</a>
+    </div>
+    <div class="skn-header-nav ms-auto" *ngIf="displayList == 'false'">
+        <a class="skn-header-nav-navitem">ID {{documentId}}:</a>
+        <div class="dropdown skn-header-nav-dropdown">
+            <button class="btn dropdown-toggle skn-header-nav-navitem-active" type="button" data-bs-toggle="dropdown" aria-expanded="false">Insurance Policy <i class="bi bi-chevron-down ms-2"></i></button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item">Insurance Policy</a></li>
+                <li><a class="dropdown-item">Insurance Policy</a></li>
+                <li><a class="dropdown-item">Insurance Policy</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="skn-header-timer ms-auto" *ngIf="displayList == 'false'">00:00</div>
+    <div class="skn-header-nav">
+        <div class="skn-header-nav">
+            <div class="dropdown skn-notification dropdown-center">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../assets/images/icon-bell.svg"/>
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                        <div class="skn-notification-text">Notification text comes here as a placeholder</div>
+                        <div class="skn-notification-time">Today 00:00</div>
+                    </li>
+                    <li class="dropdown-item">
+                        <div class="skn-notification-text">Notification text comes here as a placeholder</div>
+                        <div class="skn-notification-time">Today 00:00</div>
+                    </li>
+                    <li class="dropdown-item">
+                        <div class="skn-notification-text">Notification text comes here as a placeholder</div>
+                        <div class="skn-notification-time">Today 00:00</div>
+                    </li>
+                    <li class="dropdown-item">
+                        <a class="skn-notification-more" href="#">See All Notifications</a>
+                    </li>
+                </ul>
+                
+                <!-- <ul class="dropdown-menu">
+                    <li class="dropdown-item text-center">
+                        <img src="../assets/images/icon-empty-notification.svg"/>
+                        <div class="skn-notification-empty-text mt-2">No Notifications</div>
+                    </li>
+                </ul> -->
+            </div>
+            <div class="dropdown skn-header-profile">
+                <button class="btn dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="me-3">
+                        <div class="skn-header-profile-name">John Doe</div>
+                        <div class="skn-header-profile-role">Analyst</div>
+                    </div>
+                    <img src="../assets/images/profile-icon.svg"/>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#switchRolesModal" aria-expanded="false">Switch roles</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="switchRolesModal" tabindex="-1" aria-labelledby="switchRolesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="skn-modal-title">Switch Roles</h3>
+            <img src="../assets/images/icon-close.svg" class="ms-auto modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
+        </div>
+        <!--===============================================================================================-->
+        <div class="modal-body">
+            <div class="skn-switch-roles-cnt">
+                <a routerLink="/sme/calibrate-documents" class="skn-switch-roles-box" (click)="smenavigate()">
+                    <img src="../assets/images/icon-sme.svg" class="skn-icon-36" />
+                    <div class="skn-switch-roles-text mt-2">SME</div>
+                </a>
+                <a href="#" class="skn-switch-roles-box">
+                    <img src="../assets/images/icon-manager.svg" class="skn-icon-36" />
+                    <div class="skn-switch-roles-text mt-2">Manager</div>
+                </a>
+                <a routerLink="/analyst/my-work" class="skn-switch-roles-box">
+                    <img src="../assets/images/icon-analyst.svg" class="skn-icon-36" />
+                    <div class="skn-switch-roles-text mt-2">Analyst</div>
+                </a>
+                <a href="#" class="skn-switch-roles-box">
+                    <img src="../assets/images/icon-qc.svg" class="skn-icon-36" />
+                    <div class="skn-switch-roles-text mt-2">QC</div>
+                </a>
+                <a href="#" class="skn-switch-roles-box">
+                    <img src="../assets/images/icon-admin.svg" class="skn-icon-36" />
+                    <div class="skn-switch-roles-text mt-2">Admin</div>
+                </a>
+            </div>
+            <!--===========================================================================================-->
+        </div>
+        <!--===============================================================================================-->
+        <div class="modal-footer">
+            <button type="button" class="skn-filled-btn" data-bs-dismiss="modal">CANCEL</button>
+        </div>
+        <!--===============================================================================================-->
+    </div>
+    </div>
+</div>

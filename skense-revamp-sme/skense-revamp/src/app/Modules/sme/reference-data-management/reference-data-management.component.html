@@ -1,0 +1,143 @@
+
+    <div class="skn-add-doctype-cnt">
+        <button type="button" class="skn-filled-btn d-block ms-auto" data-bs-toggle="modal" data-bs-target="#addReferenceDataModal">Add New Reference Data</button>
+    </div>
+    
+    <div class="skn-table-cnt">
+        <table id="sknReferenceTable" datatable class="skn-table">
+            <thead>
+                <tr>
+                    <th>Reference Type</th>
+                    <th>Last Modified</th>
+                    <th>Data Count</th>
+                    <th>Referred in Documents</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>US ID Passport</td>
+                    <td>31 May 02:06PM</td>
+                    <td>9</td>
+                    <td><span class="skn-text-success me-2">7</span></td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="#"><img src="../assets/images/copy-icon.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                        <a href="#"><img src="../assets/images/icon-edit.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                        <a href="#"><img src="../assets/images/icon-trash.svg" class="skn-config-edit-icon skn-action-icon"/></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>US Driving License</td>
+                    <td>31 May 02:06PM</td>
+                    <td>9</td>
+                    <td><span class="skn-text-success me-2">7</span></td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="#"><img src="../assets/images/copy-icon.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                        <a href="#"><img src="../assets/images/icon-edit.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                        <a href="#"><img src="../assets/images/icon-trash.svg" class="skn-config-edit-icon skn-action-icon"/></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Underwriting Policy</td>
+                    <td>31 May 02:06PM</td>
+                    <td>33</td>
+                    <td><span class="skn-text-success me-2">7</span></td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="#"><img src="../assets/images/copy-icon.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                        <a href="#"><img src="../assets/images/icon-edit.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                        <a href="#"><img src="../assets/images/icon-trash.svg" class="skn-config-edit-icon skn-action-icon"/></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Split Doc</td>
+                    <td>31 May 02:06PM</td>
+                    <td>6</td>
+                    <td><span class="skn-text-success me-2">7</span></td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="#"><img src="../assets/images/copy-icon.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                        <a href="#"><img src="../assets/images/icon-edit.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                        <a href="#"><img src="../assets/images/icon-trash.svg" class="skn-config-edit-icon skn-action-icon"/></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- ==================================================================== table-ends-here ======================================================== -->
+    
+    <!-- ==================================================================== Add New Reference Data Modal ==================================================================== -->
+    <div class="modal fade" id="addReferenceDataModal" tabindex="-1" aria-labelledby="addReferenceDataModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="skn-modal-title">Add New Reference Data</h3>
+                    <img src="../assets/images/icon-close.svg" class="ms-auto modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
+                </div>
+                <!--===============================================================================================-->
+                <div class="modal-body p-0">
+                    <div class="d-flex gap-3 mx-4 mt-3 mb-5">
+                        <div class="w-100">
+                            <label class="skn-modal-field-label-2 mb-2">Reference Data Name*</label>
+                            <input type="text" placeholder="" class="skn-input" required>
+                        </div>
+                    </div>
+                    <!--===========================================================================================-->
+                    <div class="skn-modal-table-cnt">
+                        <table class="skn-modal-table">
+                            <thead>
+                                <tr>
+                                    <th class="skn-modal-field-label-2">Key</th>
+                                    <th class="skn-modal-field-label-2">Values</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="skn-input">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="skn-input">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="skn-outline-btn">ADD NEW ROW</button>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--===========================================================================================-->
+                </div>
+                <!--===============================================================================================-->
+                <div class="modal-footer">
+                    <button type="button" class="skn-transparent-btn" data-bs-dismiss="modal">CANCEL</button>
+                    <button type="button" class="skn-filled-btn">SUBMIT</button>
+                </div>
+                <!--===============================================================================================-->
+            </div>
+        </div>
+    </div>
+    <!-- ==================================================================== Add New Reference Data Modal Ends Here ==================================================================== -->
+       

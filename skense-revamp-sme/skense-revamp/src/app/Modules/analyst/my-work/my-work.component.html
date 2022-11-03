@@ -1,0 +1,770 @@
+<div class="skn-top-filterbar" *ngIf="displayList == true">
+
+    <div>
+        <div class="dropdown skn-top-filterbar-item-select">
+            <div class="skn-top-filterbar-item-label">Filter by project:</div>
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Demo project <i class="bi bi-chevron-down ms-2"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item">Demo project</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        <div class="dropdown skn-top-filterbar-item-select">
+            <div class="skn-top-filterbar-item-label">Filter by assignment:</div>
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Assigned to my team <i class="bi bi-chevron-down ms-2"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item">Assigned to me</a></li>
+              <li><a class="dropdown-item">Assigned to my team</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        <div class="dropdown skn-top-filterbar-item-select">
+            <div class="skn-top-filterbar-item-label">Filter by status:</div>
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              All <i class="bi bi-chevron-down ms-2"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item">All</a></li>
+              <li><a class="dropdown-item">In Progress</a></li>
+              <li><a class="dropdown-item">Pending Review</a></li>
+              <li><a class="dropdown-item">Pending QC</a></li>
+              <li><a class="dropdown-item">In Queue</a></li>
+              <li><a class="dropdown-item">Completed</a></li>
+              <li><a class="dropdown-item">Failed</a></li>
+              <li><a class="dropdown-item">Rejected</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<div class="skn-table-cnt" *ngIf="displayList == true">
+    <table datatable class="skn-table">
+        <thead>
+            <tr>
+                <th>Document ID</th>
+                <th>Document Name</th>
+                <th>Assignee</th>
+                <th>Document Type</th>
+                <th>Created On</th>
+                <th>Assigned On</th>
+                <th>Last Updated On</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of sknList;" (click)="displayCanvas(data)">
+                <td>{{data.documentId}}<a><img src="../../assets/images/copy-icon.svg" class="ms-3 skn-td-copy-icon"></a>
+                    <span class="badge ms-3 skn-status-badge-rejected" *ngIf="data.status == 'Rejected'">Rejected</span>
+                    <span class="badge ms-3 skn-status-badge-failed" *ngIf="data.status == 'Failed'">Failed</span>
+                    <span class="badge ms-3 skn-status-badge-completed" *ngIf="data.status == 'Completed'">Completed</span>
+                    <span class="badge ms-3 skn-status-badge-inqueue" *ngIf="data.status == 'In Queue'">In Queue</span>
+                    <span class="badge ms-3 skn-status-badge-pendingqc" *ngIf="data.status == 'Pending QC'">Pending QC</span>
+                    <span class="badge ms-3 skn-status-badge-inprogress" *ngIf="data.status == 'In Progress'">In Progress</span>
+                </td>
+                <td>{{data.documentName}}</td>
+                <td>{{data.assignee}}</td>
+                <td>{{data.documentType}}</td>
+                <td>{{data.createdOn}}</td>
+                <td>{{data.assignedOn}}</td>
+                <td>{{data.lastUpdatedOn}}</td>
+            </tr>
+        </tbody>
+    </table>
+<!--     
+    <table datatable class="row-border hover">
+        <thead>
+            <tr>
+                <th>Column Name</th>
+ 
+                <th>Selected Rules</th>
+ 
+                <th>Map Rules</th>
+            </tr>
+        </thead>
+ 
+        <tbody>
+            <tr *ngFor="let post of sknList">
+                <td>{{ post.documentId }}</td>
+ 
+                <td>NA
+                </td>
+ 
+                <td>Test</td>
+            </tr>
+        </tbody>
+    </table> -->
+</div>
+
+<!-- ====================================================== List_View-Ends-Here ======================================================== -->
+<div class="skn-review-body" *ngIf="displayList != true && displayInvoice != true">
+    <div class="skn-review-components-cnt">
+
+        <div class="skn-review-thumbnails-container">
+            <div class="d-flex align-items-center mb-3"><img src="../assets/images/icon-thumbnails.svg" class="skn-thumbnail-icon me-2" onclick="thumbShowHide()"/><div class="skn-review-thumbnails-title" id="skn-review-thumbnails-title">Page 1 of 8</div></div>
+            <div class="skn-review-thumbnails" id="skn-review-thumbnails">
+                
+                <div class="skn-thumbnail-active">
+                    <img src="../assets/images/page-thumb.jpg" class="skn-thumbnail-img"/>
+                    <div class="skn-thumbnail-number">1</div>
+                </div>
+                
+                <div class="skn-thumbnail">
+                    <img src="../assets/images/page-thumb.jpg" class="skn-thumbnail-img"/>
+                    <div class="skn-thumbnail-number">2</div>
+                </div>
+                
+                <div class="skn-thumbnail">
+                    <img src="../assets/images/page-thumb.jpg" class="skn-thumbnail-img"/>
+                    <div class="skn-thumbnail-number">3</div>
+                </div>
+                
+                <div class="skn-thumbnail">
+                    <img src="../assets/images/page-thumb.jpg" class="skn-thumbnail-img"/>
+                    <div class="skn-thumbnail-number">4</div>
+                </div>
+                
+                <div class="skn-thumbnail">
+                    <img src="../assets/images/page-thumb.jpg" class="skn-thumbnail-img"/>
+                    <div class="skn-thumbnail-number">5</div>
+                </div>
+                
+                <div class="skn-thumbnail">
+                    <img src="../assets/images/page-thumb.jpg" class="skn-thumbnail-img"/>
+                    <div class="skn-thumbnail-number">6</div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- ================================================= thumbnails-ends-here ================================================== -->
+
+        <div class="skn-review-preview-cnt">
+            <img src="../assets/images/placeholder-page.jpg" class="w-100"/>
+        </div>
+        <!-- =============================================== preview-cnt-ends-here ================================================= -->
+        
+        <div class="skn-review-controlls">
+            <button class="skn-preview-image-options" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Rotate Clock wise"><img src="../assets/images/icon-reload.svg"></button>
+            <button class="skn-preview-image-options" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Fit to width"><img src="../assets/images/icon-arrow-left-right.svg"></button>
+            <button class="skn-preview-image-options" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Zoom in"><img src="../assets/images/zoom-in.svg"></button>
+            <button class="skn-preview-image-options" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Zoom out"><img src="../assets/images/zoom-out.svg"></button>
+            <button class="skn-preview-image-options" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Open preview in new window"><img src="../assets/images/external-link.svg"></button>
+        </div>
+        <!-- ================================================== controlls-ends-here =================================================== -->
+        
+        <div class="skn-review-tabs-cnt">
+            
+            <nav class="skn-review-tabs">
+                <div class="nav nav-tabs" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-selected="true">All</button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#mandatory" type="button" role="tab" aria-selected="false">Mandatory<span class="badge rounded-circle ms-2 skn-tab-badge-primary">1</span></button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#high-confidence" type="button" role="tab" aria-selected="false">High Confidence<div class="ms-2 skn-tab-badge-success"></div></button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#low-confidence" type="button" role="tab" aria-selected="false">Low Confidence<div class="ms-2 skn-tab-badge-warning"></div></button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#errorTab" type="button" role="tab" aria-selected="false">Error<div class="ms-2 skn-tab-badge-warning"></div></button>
+                </div>
+            </nav>
+            
+            <div class="tab-content skn-tab-content">
+                <div class="tab-pane fade show active" id="all" role="tabpanel" tabindex="0">
+                    
+                    <div class="skn-fields-cnt">
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Account Number</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <input type="text" placeholder="ABC01234567" class="skn-attr-high-cnf error-cnf">
+                                <p class="error-cnf-text">Only numeric values allowed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Account Name</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <input type="text" placeholder="Naresh" class="skn-attr-medium-cnf">
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Account Status</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <input type="text" placeholder="Active" class="skn-attr-high-cnf">
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Line of Business</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <input type="text" placeholder="Insurance" class="skn-attr-high-cnf">
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Premium Amount *</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100 d-flex gap-3 p-2 skn-row-medium-cnf">
+                                <div class="form-check">
+                                    <input class="form-check-input skn-radio" type="radio" name="Premium Amount" id="paRadio1">
+                                    <label class="skn-radio-label" for="paRadio1">
+                                        Option 1
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input skn-radio" type="radio" name="Premium Amount" id="paRadio2">
+                                    <label class="skn-radio-label" for="paRadio2">
+                                        Option 2
+                                    </label>
+                                </div>
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Premium Amount *</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100 d-flex gap-3 p-2 skn-row-medium-cnf">
+                                <div class="skn-check">
+                                    <input class="form-check-input skn-check-input" type="checkbox" id="checkbox1">
+                                    <label class="skn-check-label" for="checkbox1">
+                                        Option 1
+                                    </label>
+                                </div>
+                                <div class="skn-check">
+                                    <input class="form-check-input skn-check-input" type="checkbox" id="checkbox2">
+                                    <label class="skn-check-label" for="checkbox2">
+                                        Option 2
+                                    </label>
+                                </div>
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Coverage</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <input type="text" placeholder="All Critical Care" class="skn-attr-high-cnf">
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Summary</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <textarea rows="10" placeholder="This schedule, policy terms andconditions and endoresements shall beread together and words of expression to which a specific meaning has been attached to any part of the LIC health insurance policy. Any ammendments/" class="skn-attr-medium-cnf"></textarea>
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <!--===========================================================================================-->
+                <div class="tab-pane fade" id="mandatory" role="tabpanel" tabindex="0">
+                    
+                    <div class="skn-fields-cnt">
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Premium Amount *</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <input type="text" placeholder="" class="skn-input">
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <!--===========================================================================================-->
+                <div class="tab-pane fade" id="high-confidence" role="tabpanel" tabindex="0">
+                    
+                    <div class="skn-fields-cnt">
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Account Number</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <input type="text" placeholder="ABC01234567" class="skn-attr-high-cnf">
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Account Status</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <input type="text" placeholder="Active" class="skn-attr-high-cnf">
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Line of Business</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <input type="text" placeholder="Insurance" class="skn-attr-high-cnf">
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Coverage</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <input type="text" placeholder="All Critical Care" class="skn-attr-high-cnf">
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <!--============================================================================================-->
+                <div class="tab-pane fade" id="low-confidence" role="tabpanel" tabindex="0">
+                    
+                    <div class="skn-fields-cnt">
+                        
+                        <div class="skn-review-fields-note">Fields marked with <img src="../assets/images/repeat.svg" class="mx-2"/> have been changed</div>
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Account Name</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <input type="text" placeholder="Naresh" class="skn-attr-medium-cnf">
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Summary</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <textarea rows="10" placeholder="This schedule, policy terms andconditions and endoresements shall beread together and words of expression to which a specific meaning has been attached to any part of the LIC health insurance policy. Any ammendments/" class="skn-attr-medium-cnf"></textarea>
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <!--=============================================================================================-->
+                <div class="tab-pane fade" id="errorTab" role="tabpanel" tabindex="0">
+                    
+                    <div class="skn-fields-cnt">
+                        
+                        <div class="skn-review-fields-note">Fields marked with <img src="../assets/images/repeat.svg" class="mx-2"/> have been changed</div>
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Account Name</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <input type="text" placeholder="Naresh" class="skn-attr-medium-cnf">
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="skn-fieldset">
+                            <label for="" class="skn-field-label">Summary</label>
+                            <img src="../assets/images/repeat-black-bg.svg" class="skn-field-label-icon"/>
+                            <div class="w-100">
+                                <textarea rows="10" placeholder="This schedule, policy terms andconditions and endoresements shall beread together and words of expression to which a specific meaning has been attached to any part of the LIC health insurance policy. Any ammendments/" class="skn-attr-medium-cnf"></textarea>
+                                <p class="error-cnf-text"></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <!-- ============================================================== tabs-ends-here ================================================================== -->
+            </div>
+            
+            <div class="skn-review-tabs-footer"> 
+                <div class="skn-check">
+                    <input class="form-check-input skn-check-input-color" type="checkbox" value="" id="checkbox">
+                    <label class="skn-check-label-color" for="checkbox">
+                        QC REVIEW
+                    </label>
+                </div>                
+                <div class="btn-group skn-review-split-dropdown">
+                    <button type="button" class="skn-outline-btn">SAVE</button>
+                    <button type="button" class="skn-outline-split-btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-chevron-down"></i>
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">SAVE</a></li>
+                        <li><a class="dropdown-item">REJECT</a></li>
+                    </ul>
+                </div>                
+                <!-- <button type="button" class="skn-outline-btn" data-bs-toggle="modal" data-bs-target="#rejectionModal">REJECT</button> -->
+                <button type="button" class="skn-disabled-btn">SUBMIT</button>                
+            </div>            
+        </div>
+        <!-- ============================================================== tabs-ends-here ================================================================== -->
+
+    </div>
+</div>
+<div class="skn-review-body" *ngIf="displayList != true && displayInvoice == true">
+    <div class="skn-review-components-cnt">
+
+        <div class="skn-review-thumbnails-container">
+            <div class="d-flex align-items-center mb-3"><img src="../assets/images/icon-thumbnails.svg" class="skn-thumbnail-icon me-2" onclick="thumbShowHide()"/><div class="skn-review-thumbnails-title" id="skn-review-thumbnails-title">Page 1 of 8</div></div>
+            <div class="skn-review-thumbnails" id="skn-review-thumbnails">
+
+                <div class="skn-thumbnail-active">
+                    <img src="../assets/images/page-thumb.jpg" class="skn-thumbnail-img"/>
+                    <div class="skn-thumbnail-number">1</div>
+                </div>
+        
+                <div class="skn-thumbnail">
+                    <img src="../assets/images/page-thumb.jpg" class="skn-thumbnail-img"/>
+                    <div class="skn-thumbnail-number">2</div>
+                </div>
+        
+                <div class="skn-thumbnail">
+                    <img src="../assets/images/page-thumb.jpg" class="skn-thumbnail-img"/>
+                    <div class="skn-thumbnail-number">3</div>
+                </div>
+        
+                <div class="skn-thumbnail">
+                    <img src="../assets/images/page-thumb.jpg" class="skn-thumbnail-img"/>
+                    <div class="skn-thumbnail-number">4</div>
+                </div>
+        
+                <div class="skn-thumbnail">
+                    <img src="../assets/images/page-thumb.jpg" class="skn-thumbnail-img"/>
+                    <div class="skn-thumbnail-number">5</div>
+                </div>
+        
+                <div class="skn-thumbnail">
+                    <img src="../assets/images/page-thumb.jpg" class="skn-thumbnail-img"/>
+                    <div class="skn-thumbnail-number">6</div>
+                </div>
+        
+            </div>
+        </div>
+        <!-- ================================================= thumbnails-ends-here ================================================== -->
+
+        <div class="skn-tabular-tabs-cnt">
+
+            <nav class="skn-tabular-tabs">
+                <div class="nav nav-tabs" role="tablist">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabularTab1" type="button" role="tab" aria-selected="true">Invoice No: 1234567<a href="#" class="skn-tabular-tab-close"><i class="bi bi-x-lg ms-2"></i></a></button>
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabularTab2" type="button" role="tab" aria-selected="false">Invoice No: 3456789<a href="#" class="skn-tabular-tab-close"><i class="bi bi-x-lg ms-2"></i></a></button>
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabularTab3" type="button" role="tab" aria-selected="false">Invoice No: 4567891<a href="#" class="skn-tabular-tab-close"><i class="bi bi-x-lg ms-2"></i></a></button>
+                <a href="#" class="ms-auto"><img src="../assets/images/zoom-in.svg"/></a>
+                </div>
+            </nav>
+
+            <div class="tab-content skn-tabular-tabs-content">
+
+                <div class="tab-pane fade show active" id="tabularTab1" role="tabpanel" tabindex="0">
+
+                    <div class="skn-tabular-highlight-fields-cnt">
+
+                        <div class="skn-tabular-highlight-fields">
+
+                            <div class="skn-tabular-fieldset">
+                                <label for="" class="skn-tabular-field-label">Invoice No *</label>
+                                <input type="text" placeholder="1234567" class="skn-attr-high-cnf">
+                            </div>
+
+                            <div class="skn-tabular-fieldset">
+                                <label for="" class="skn-tabular-field-label">Invoice Amount *</label>
+                                <input type="text" placeholder="1234567" class="skn-attr-high-cnf">
+                            </div>
+
+                            <div class="skn-tabular-fieldset">
+                                <label for="" class="skn-tabular-field-label">Invoice Currency*</label>
+                                <div class="dropdown skn-dropdown">
+                                    <button class="btn dropdown-toggle skn-attr-high-cnf" type="button" data-bs-toggle="dropdown" aria-expanded="false">Rupees<i class="bi bi-chevron-down ms-2"></i></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Rupees</a></li>
+                                        <li><a class="dropdown-item" href="#">Dollars</a></li>
+                                        <li><a class="dropdown-item" href="#">Euros</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="skn-tabular-fieldset">
+                                <label for="" class="skn-tabular-field-label">Invoice Date*</label>
+                                <input type="text" placeholder="29 - 04 - 2021" class="skn-attr-high-cnf">
+                            </div>
+
+                            <div class="skn-tabular-fieldset">
+                                <label for="" class="skn-tabular-field-label">Incoterm*</label>
+                                <div class="dropdown skn-dropdown">
+                                    <button class="btn dropdown-toggle skn-attr-medium-cnf" type="button" data-bs-toggle="dropdown" aria-expanded="false">1234567<i class="bi bi-chevron-down ms-2"></i></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">1234567</a></li>
+                                        <li><a class="dropdown-item" href="#">1234567</a></li>
+                                        <li><a class="dropdown-item" href="#">1234567</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="skn-tabular-fieldset">
+                                <label for="" class="skn-tabular-field-label">Invoice Net Mass*</label>
+                                <input type="text" placeholder="1234567" class="skn-attr-low-cnf">
+                            </div>
+
+                            <div class="skn-tabular-fieldset">
+                                <label for="" class="skn-tabular-field-label">Net Mass Unit*</label>
+                                <div class="dropdown skn-dropdown">
+                                    <button class="btn dropdown-toggle skn-attr-low-cnf" type="button" data-bs-toggle="dropdown" aria-expanded="false">1234567<i class="bi bi-chevron-down ms-2"></i></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">1234567</a></li>
+                                        <li><a class="dropdown-item" href="#">1234567</a></li>
+                                        <li><a class="dropdown-item" href="#">1234567</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- =========================================================== highlight-fields-ends-here ======================================================= -->
+
+                    <div class="skn-tabular-table-cnt">
+
+                        <table class="skn-tabular-table">
+
+                            <thead>
+                                <tr>
+                                    <th><input class="form-check-input skn-check-input" type="checkbox" value="" id="checkbox"></th>
+                                    <th>Sl No.</th>
+                                    <th>Product Code</th>
+                                    <th>Country of Origin</th>
+                                    <th>Decs of Goods</th>
+                                    <th>Commodity Code</th>
+                                    <th>Quantity</th>
+                                    <th>Package Type</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr class="skn-row-high-cnf">
+                                    <td><input class="form-check-input skn-check-input" type="checkbox" value="" id="checkbox"></td>
+                                    <td><input type="text" placeholder="1" class="skn-input"></td>
+                                    <td><input type="text" placeholder="3432411" class="skn-input"></td>
+                                    <td>
+                                        <div class="dropdown skn-dropdown">
+                                        <button class="btn dropdown-toggle skn-input" type="button" data-bs-toggle="dropdown" aria-expanded="false">India<i class="bi bi-chevron-down ms-2"></i></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                        </ul>
+                                    </div>
+                                    </td>
+                                    <td><input type="text" placeholder="275/45R21110W" class="skn-input"></td>
+                                    <td><input type="text" placeholder="432" class="skn-input"></td>
+                                    <td><input type="text" placeholder="541" class="skn-input"></td>
+                                    <td><input type="text" placeholder="" class="skn-input"></td>
+                                </tr>
+                                <tr class="skn-row-medium-cnf">
+                                    <td><input class="form-check-input skn-check-input" type="checkbox" value="" id="checkbox"></td>
+                                    <td><input type="text" placeholder="1" class="skn-input"></td>
+                                    <td><input type="text" placeholder="3432411" class="skn-input"></td>
+                                    <td>
+                                        <div class="dropdown skn-dropdown">
+                                        <button class="btn dropdown-toggle skn-input" type="button" data-bs-toggle="dropdown" aria-expanded="false">India<i class="bi bi-chevron-down ms-2"></i></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                        </ul>
+                                    </div>
+                                    </td>
+                                    <td><input type="text" placeholder="275/45R21110W" class="skn-input"></td>
+                                    <td><input type="text" placeholder="432" class="skn-input"></td>
+                                    <td><input type="text" placeholder="541" class="skn-input"></td>
+                                    <td><input type="text" placeholder="" class="skn-input"></td>
+                                </tr>
+                                <tr class="skn-row-high-cnf">
+                                    <td><input class="form-check-input skn-check-input" type="checkbox" value="" id="checkbox"></td>
+                                    <td><input type="text" placeholder="1" class="skn-input"></td>
+                                    <td><input type="text" placeholder="3432411" class="skn-input"></td>
+                                    <td>
+                                        <div class="dropdown skn-dropdown">
+                                        <button class="btn dropdown-toggle skn-input" type="button" data-bs-toggle="dropdown" aria-expanded="false">India<i class="bi bi-chevron-down ms-2"></i></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                        </ul>
+                                        </div>
+                                    </td>
+                                    <td><input type="text" placeholder="275/45R21110W" class="skn-input"></td>
+                                    <td><input type="text" placeholder="432" class="skn-input"></td>
+                                    <td><input type="text" placeholder="541" class="skn-input"></td>
+                                    <td><input type="text" placeholder="" class="skn-input"></td>
+                                </tr>
+                                <tr class="skn-row-medium-cnf">
+                                    <td><input class="form-check-input skn-check-input" type="checkbox" value="" id="checkbox"></td>
+                                    <td><input type="text" placeholder="1" class="skn-input"></td>
+                                    <td><input type="text" placeholder="3432411" class="skn-input"></td>
+                                    <td>
+                                        <div class="dropdown skn-dropdown">
+                                        <button class="btn dropdown-toggle skn-input" type="button" data-bs-toggle="dropdown" aria-expanded="false">India<i class="bi bi-chevron-down ms-2"></i></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                        </ul>
+                                    </div>
+                                    </td>
+                                    <td><input type="text" placeholder="275/45R21110W" class="skn-input"></td>
+                                    <td><input type="text" placeholder="432" class="skn-input"></td>
+                                    <td><input type="text" placeholder="541" class="skn-input"></td>
+                                    <td><input type="text" placeholder="" class="skn-input"></td>
+                                </tr>
+                                <tr class="skn-row-high-cnf">
+                                    <td><input class="form-check-input skn-check-input" type="checkbox" value="" id="checkbox"></td>
+                                    <td><input type="text" placeholder="1" class="skn-input"></td>
+                                    <td><input type="text" placeholder="3432411" class="skn-input"></td>
+                                    <td>
+                                        <div class="dropdown skn-dropdown">
+                                        <button class="btn dropdown-toggle skn-input" type="button" data-bs-toggle="dropdown" aria-expanded="false">India<i class="bi bi-chevron-down ms-2"></i></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                        </ul>
+                                    </div>
+                                    </td>
+                                    <td><input type="text" placeholder="275/45R21110W" class="skn-input"></td>
+                                    <td><input type="text" placeholder="432" class="skn-input"></td>
+                                    <td><input type="text" placeholder="541" class="skn-input"></td>
+                                    <td><input type="text" placeholder="" class="skn-input"></td>
+                                </tr>
+                                <tr class="skn-row-medium-cnf">
+                                    <td><input class="form-check-input skn-check-input" type="checkbox" value="" id="checkbox"></td>
+                                    <td><input type="text" placeholder="1" class="skn-input"></td>
+                                    <td><input type="text" placeholder="3432411" class="skn-input"></td>
+                                    <td>
+                                        <div class="dropdown skn-dropdown">
+                                        <button class="btn dropdown-toggle skn-input" type="button" data-bs-toggle="dropdown" aria-expanded="false">India<i class="bi bi-chevron-down ms-2"></i></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                        </ul>
+                                    </div>
+                                    </td>
+                                    <td><input type="text" placeholder="275/45R21110W" class="skn-input"></td>
+                                    <td><input type="text" placeholder="432" class="skn-input"></td>
+                                    <td><input type="text" placeholder="541" class="skn-input"></td>
+                                    <td><input type="text" placeholder="" class="skn-input"></td>
+                                </tr>
+                                <tr class="skn-row-high-cnf">
+                                    <td><input class="form-check-input skn-check-input" type="checkbox" value="" id="checkbox"></td>
+                                    <td><input type="text" placeholder="1" class="skn-input"></td>
+                                    <td><input type="text" placeholder="3432411" class="skn-input"></td>
+                                    <td>
+                                        <div class="dropdown skn-dropdown">
+                                        <button class="btn dropdown-toggle skn-input" type="button" data-bs-toggle="dropdown" aria-expanded="false">India<i class="bi bi-chevron-down ms-2"></i></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                        </ul>
+                                    </div>
+                                    </td>
+                                    <td><input type="text" placeholder="275/45R21110W" class="skn-input"></td>
+                                    <td><input type="text" placeholder="432" class="skn-input"></td>
+                                    <td><input type="text" placeholder="541" class="skn-input"></td>
+                                    <td><input type="text" placeholder="" class="skn-input"></td>
+                                </tr>
+                                <tr class="skn-row-medium-cnf">
+                                    <td><input class="form-check-input skn-check-input" type="checkbox" value="" id="checkbox"></td>
+                                    <td><input type="text" placeholder="1" class="skn-input"></td>
+                                    <td><input type="text" placeholder="3432411" class="skn-input"></td>
+                                    <td>
+                                        <div class="dropdown skn-dropdown">
+                                        <button class="btn dropdown-toggle skn-input" type="button" data-bs-toggle="dropdown" aria-expanded="false">India<i class="bi bi-chevron-down ms-2"></i></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                            <li><a class="dropdown-item" href="#">India</a></li>
+                                        </ul>
+                                    </div>
+                                    </td>
+                                    <td><input type="text" placeholder="275/45R21110W" class="skn-input"></td>
+                                    <td><input type="text" placeholder="432" class="skn-input"></td>
+                                    <td><input type="text" placeholder="541" class="skn-input"></td>
+                                    <td><input type="text" placeholder="" class="skn-input"></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                    <!-- =========================================================== table-ends-here ================================================================== -->
+
+                </div>
+
+                <div class="tab-pane fade" id="tabularTab2" role="tabpanel" tabindex="0">
+                </div>
+
+                <div class="tab-pane fade" id="tabularTab3" role="tabpanel" tabindex="0">
+                </div>
+
+            </div>
+
+            <div class="skn-tabular-tabs-footer">
+
+                <div class="skn-tabular-tabs-footer-note me-auto">Fields marked with * are mandatory</div>
+
+                <div class="skn-check">
+                    <input class="form-check-input skn-check-input-color" type="checkbox" id="checkbox2">
+                    <label class="skn-check-label-color" for="checkbox2">
+                        QC REVIEW
+                    </label>
+                </div>
+
+                <div class="btn-group skn-review-split-dropdown">
+                    <button type="button" class="skn-outline-btn">SAVE</button>
+                    <button type="button" class="skn-outline-split-btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-chevron-down"></i>
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">SAVE</a></li>
+                    <li><a class="dropdown-item" href="#">REJECT</a></li>
+                    </ul>
+                </div>
+
+                <button type="button" class="skn-filled-btn">SUBMIT</button>
+
+            </div>
+
+        </div>
+        <!-- ============================================================== tabs-ends-here ================================================================== -->
+
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-body">
+            <input type="text" placeholder="1,00,000" class="skn-input">
+        </div>
+    </div>
+    </div>
+</div>

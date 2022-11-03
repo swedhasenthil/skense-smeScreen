@@ -1,0 +1,372 @@
+
+    
+    <div class="skn-table-cnt">
+        <table id="sknConfigTable" datatable class="skn-table" style="width: 100% !important;">
+            <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Description</th>
+                    <th>Start Date</th>
+                    <th>Status</th>
+                    <th>Docs Processed</th>
+                    <th>Enable Review</th>
+                    <th>Bypass Analyst</th>
+                    <th>Preview Image</th>
+                    <th style="width: 75px !important;">QC%</th>
+                    <th style="width: 75px !important;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="../assets/images/chevron-up.svg" class="me-2"/>Demo Project 1</td>
+                    <td><input type="text" placeholder="3432411" class="skn-input"></td>
+                    <td>15 Jan 00:00</td>
+                    <td><span class="badge skn-status-badge-completed-filled">Active</span></td>
+                    <td>7</td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <select class="skn-select">
+                            <option value="Option 1">Same Window</option>
+                            <option value="Option 2">New Window</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="100" class="skn-input"></td>
+                    <td>
+                        <a href="#"><img src="../assets/images/icon-play.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                        <a href="skn-configure-projects-workflow.html"><img src="../assets/images/icon-workflow.svg" class="skn-config-edit-icon skn-action-icon"/></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="10">
+                        <!-- ====================================================== Row expand ================================================ -->
+                        <table class="skn-sub-table">
+                            <thead>
+                                <tr>
+                                    <th>Document Type</th>
+                                    <th>Document Description</th>
+                                    <th>Attributes</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <select class="skn-select">
+                                            <option value="Option 1">Option 1</option>
+                                            <option value="Option 2">Option 2</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="skn-input"></td>
+                                    <td><a href="#" class="skn-badge-highlight" data-bs-toggle="modal" data-bs-target="#manageAttributesModal">6</a></td>
+                                    <td><span class="badge skn-status-badge-completed-filled">Done</span></td>
+                                    <td>
+                                        <a href="#"><img src="../assets/images/icon-edit.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                                        <a href="#"><img src="../assets/images/icon-trash.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                                        <a href="#"><img src="../assets/images/zoom-in.svg" class="skn-config-edit-icon skn-action-icon"/></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select class="skn-select">
+                                            <option value="Option 1">Option 1</option>
+                                            <option value="Option 2">Option 2</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="skn-input"></td>
+                                    <td><a href="#" class="skn-badge-highlight" data-bs-toggle="modal" data-bs-target="#manageAttributesModal">6</a></td>
+                                    <td><span class="badge skn-status-badge-completed-filled">Done</span></td>
+                                    <td>
+                                        <a href="#"><img src="../assets/images/icon-edit.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                                        <a href="#"><img src="../assets/images/icon-trash.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                                        <a href="#"><img src="../assets/images/zoom-in.svg" class="skn-config-edit-icon skn-action-icon"/></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select class="skn-select">
+                                            <option value="Option 1">Option 1</option>
+                                            <option value="Option 2">Option 2</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="skn-input"></td>
+                                    <td><a href="#" class="skn-badge-highlight" data-bs-toggle="modal" data-bs-target="#manageAttributesModal">6</a></td>
+                                    <td><span class="badge skn-status-badge-completed-filled">Done</span></td>
+                                    <td>
+                                        <a href="#"><img src="../assets/images/icon-edit.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                                        <a href="#"><img src="../assets/images/icon-trash.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                                        <a href="#"><img src="../assets/images/zoom-in.svg" class="skn-config-edit-icon skn-action-icon"/></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>                    
+                </tr>
+                <tr>
+                    <td><img src="../assets/images/chevron-down.svg" class="me-2"/>Demo Project 1</td>
+                    <td><input type="text" placeholder="3432411" class="skn-input"></td>
+                    <td>15 Jan 00:00</td>
+                    <td><span class="badge skn-status-badge-completed-filled">Active</span></td>
+                    <td>7</td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <select class="skn-select">
+                            <option value="Option 1">Same Window</option>
+                            <option value="Option 2">New Window</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="100" class="skn-input"></td>
+                    <td>
+                        <a href="#"><img src="../assets/images/icon-play.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                        <a href="skn-configure-projects-workflow.html"><img src="../assets/images/icon-workflow.svg" class="skn-config-edit-icon skn-action-icon"/></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/images/chevron-down.svg" class="me-2"/>Demo Project 1</td>
+                    <td><input type="text" placeholder="3432411" class="skn-input"></td>
+                    <td>15 Jan 00:00</td>
+                    <td><span class="badge skn-status-badge-completed-filled">Active</span></td>
+                    <td>7</td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <select class="skn-select">
+                            <option value="Option 1">Same Window</option>
+                            <option value="Option 2">New Window</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="100" class="skn-input"></td>
+                    <td>
+                        <a href="#"><img src="../assets/images/icon-play.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                        <a href="skn-configure-projects-workflow.html"><img src="../assets/images/icon-workflow.svg" class="skn-config-edit-icon skn-action-icon"/></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/images/chevron-down.svg" class="me-2"/>Demo Project 1</td>
+                    <td><input type="text" placeholder="3432411" class="skn-input"></td>
+                    <td>15 Jan 00:00</td>
+                    <td><span class="badge skn-status-badge-completed-filled">Active</span></td>
+                    <td>7</td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <select class="skn-select">
+                            <option value="Option 1">Same Window</option>
+                            <option value="Option 2">New Window</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="100" class="skn-input"></td>
+                    <td>
+                        <a href="#"><img src="../assets/images/icon-play.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                        <a href="skn-configure-projects-workflow.html"><img src="../assets/images/icon-workflow.svg" class="skn-config-edit-icon skn-action-icon"/></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/images/chevron-down.svg" class="me-2"/>Demo Project 1</td>
+                    <td><input type="text" placeholder="3432411" class="skn-input"></td>
+                    <td>15 Jan 00:00</td>
+                    <td><span class="badge skn-status-badge-completed-filled">Active</span></td>
+                    <td>7</td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <select class="skn-select">
+                            <option value="Option 1">Same Window</option>
+                            <option value="Option 2">New Window</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="100" class="skn-input"></td>
+                    <td>
+                        <a href="#"><img src="../assets/images/icon-play.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                        <a href="skn-configure-projects-workflow.html"><img src="../assets/images/icon-workflow.svg" class="skn-config-edit-icon skn-action-icon"/></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/images/chevron-down.svg" class="me-2"/>Demo Project 1</td>
+                    <td><input type="text" placeholder="3432411" class="skn-input"></td>
+                    <td>15 Jan 00:00</td>
+                    <td><span class="badge skn-status-badge-completed-filled">Active</span></td>
+                    <td>7</td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check form-switch skn-switch-green">
+                            <input class="form-check-input skn-switch-green-input" type="checkbox" role="switch" checked>
+                        </div>
+                    </td>
+                    <td>
+                        <select class="skn-select">
+                            <option value="Option 1">Same Window</option>
+                            <option value="Option 2">New Window</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="100" class="skn-input"></td>
+                    <td>
+                        <a href="#" data-bs-toggle="tooltip" data-bs-title="Run Project"><img src="../assets/images/icon-play.svg" class="skn-config-edit-icon skn-action-icon me-3"/></a>
+                        <a href="skn-configure-projects-workflow.html" data-bs-toggle="tooltip" data-bs-title="View Workflow"><img src="../assets/images/icon-workflow.svg" class="skn-config-edit-icon skn-action-icon" /></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- ==================================================================== table-ends-here ======================================================== -->
+
+   
+
+        <!-- Manage Attributes Modal -->
+        <div class="modal fade" id="manageAttributesModal" tabindex="-1" aria-labelledby="manageAttributesModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="skn-modal-title">Manage Attributes</h3>
+                        <img src="../assets/images/icon-close.svg" class="ms-auto modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
+                    </div>
+                    <!--===============================================================================================-->
+                    <div class="modal-body">
+                        
+                        <div class="d-flex"> 
+                            <div class="skn-border-right-gray w-50 px-3 skn-modal-sa-cnt">
+                                <div class="skn-check mb-2">
+                                    <input class="form-check-input skn-check-input" type="checkbox" id="sa1">
+                                    <label class="skn-check-label" for="sa1">
+                                        <strong>Available Attributes</strong>
+                                    </label>
+                                </div>
+                                <div class="skn-check mb-2">
+                                    <input class="form-check-input skn-check-input" type="checkbox" id="ma1" checked>
+                                    <label class="skn-check-label" for="ma1">
+                                        Attribute 1
+                                    </label>
+                                </div>
+                                <div class="skn-check mb-2">
+                                    <input class="form-check-input skn-check-input" type="checkbox" id="ma2">
+                                    <label class="skn-check-label" for="ma2">
+                                        Attribute 2
+                                    </label>
+                                </div>
+                                <div class="skn-check mb-2">
+                                    <input class="form-check-input skn-check-input" type="checkbox" id="ma3">
+                                    <label class="skn-check-label" for="ma3">
+                                        Attribute 3
+                                    </label>
+                                </div>
+                                <div class="skn-check mb-2">
+                                    <input class="form-check-input skn-check-input" type="checkbox" id="ma4">
+                                    <label class="skn-check-label" for="ma4">
+                                        Attribute 4
+                                    </label>
+                                </div>
+                                <div class="skn-check">
+                                    <input class="form-check-input skn-check-input" type="checkbox" id="ma5">
+                                    <label class="skn-check-label" for="ma5">
+                                        Attribute 5
+                                    </label>
+                                </div>
+                                <div class="position-sticky bottom-0 mt-4">
+                                    <button type="button" class="skn-outline-btn" disabled>Add Attributes</button>
+                                </div>                        
+                            </div>
+                            <!--==========================================================================-->
+                            
+                            <div class="skn-border-right-gray px-3 skn-modal-sa-cnt w-50">
+                                <div class="skn-check mb-2">
+                                    <input class="form-check-input skn-check-input" type="checkbox" id="sa2">
+                                    <label class="skn-check-label" for="sa2">
+                                        <strong>Selected Attributes</strong>
+                                    </label>
+                                </div>
+                                <div class="skn-check mb-2">
+                                    <input class="form-check-input skn-check-input" type="checkbox" id="ma6">
+                                    <label class="skn-check-label" for="ma6">
+                                        Attribute 6
+                                    </label>
+                                </div>
+                                <div class="skn-check mb-2">
+                                    <input class="form-check-input skn-check-input" type="checkbox" id="ma7">
+                                    <label class="skn-check-label" for="ma7">
+                                        Attribute 7
+                                    </label>
+                                </div>
+                                <div class="skn-check mb-2">
+                                    <input class="form-check-input skn-check-input" type="checkbox" id="ma8">
+                                    <label class="skn-check-label" for="ma8">
+                                        Attribute 8
+                                    </label>
+                                </div>
+                                <div class="skn-check mb-2">
+                                    <input class="form-check-input skn-check-input" type="checkbox" id="ma9">
+                                    <label class="skn-check-label" for="ma9">
+                                        Attribute 9
+                                    </label>
+                                </div>
+                                <div class="skn-check">
+                                    <input class="form-check-input skn-check-input" type="checkbox" id="ma10">
+                                    <label class="skn-check-label" for="ma10">
+                                        Attribute 10
+                                    </label>
+                                </div>                        
+                                <div class="position-sticky bottom-0 mt-4">
+                                    <button type="button" class="skn-outline-btn" disabled>Remove Attributes</button>
+                                </div>
+                            </div>
+                            <!--==========================================================================-->
+                        </div>
+                        <!--===========================================================================================-->
+                        
+                    </div>
+                    <!--===============================================================================================-->
+                    <div class="modal-footer">
+                        <button type="button" class="skn-transparent-btn" data-bs-dismiss="modal">CANCEL</button>
+                        <button type="button" class="skn-filled-btn">DEFINE RULES</button>
+                    </div>
+                    <!--================================================================================================-->
+                </div>
+            </div>
+        </div>
+        <!--=======================================================================================================-->
+              
