@@ -15,7 +15,7 @@ import { DataTablesModule } from 'angular-datatables';
    // CalendarModule
   ],
   exports:[
-    CommonModule,
+    // CommonModule,
     DataTablesModule,
    // CalendarModule
   ]

@@ -35,10 +35,11 @@ export class LoginComponent implements OnInit {
 
     this.loginService.login(payload).subscribe((res: any) => {
       if (res) {
-        console.log(res)
         const loginDetails = res['userDetails'];
         localStorage.setItem('loginDetails', res['userDetails'])
         localStorage.setItem('user_name', loginDetails.user_name);
+        localStorage.setItem('user_id', loginDetails._id);
+        console.log(loginDetails,loginDetails._id)
         localStorage.setItem('jwtToken', res['access_token']);
         let role = loginDetails['roles'][1];
        // console.log(res['access_token'])

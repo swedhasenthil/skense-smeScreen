@@ -36,24 +36,17 @@
     <div class="skn-header-nav">
         <div class="skn-header-nav">
             <div class="dropdown skn-notification dropdown-center">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"  (click)="getAllNotificationsOfUser(true)">
                     <img src="../assets/images/icon-bell.svg"/>
                 </button>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-item">
-                        <div class="skn-notification-text">Notification text comes here as a placeholder</div>
-                        <div class="skn-notification-time">Today 00:00</div>
+                <ul class="dropdown-menu" >
+                    <li class="dropdown-item" *ngFor="let notification of notificationMessages;let i = index">
+                        <div class="skn-notification-text" >{{notification.body}}</div>
+                        <div class="skn-notification-time" >{{notification.created_at}}</div>
                     </li>
+                
                     <li class="dropdown-item">
-                        <div class="skn-notification-text">Notification text comes here as a placeholder</div>
-                        <div class="skn-notification-time">Today 00:00</div>
-                    </li>
-                    <li class="dropdown-item">
-                        <div class="skn-notification-text">Notification text comes here as a placeholder</div>
-                        <div class="skn-notification-time">Today 00:00</div>
-                    </li>
-                    <li class="dropdown-item">
-                        <a class="skn-notification-more" href="#">See All Notifications</a>
+                        <a class="skn-notification-more" (click)="showMore = true">See All Notifications</a>
                     </li>
                 </ul>
                 
@@ -73,8 +66,8 @@
                     <img src="../assets/images/profile-icon.svg"/>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#switchRolesModal" aria-expanded="false">Switch roles</a></li>
-                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                    <li (click)="getAllUserRoles()"><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#switchRolesModal" aria-expanded="false">Switch roles</a></li>
+                <li><a class="dropdown-item"  (click)="logout()">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -91,7 +84,7 @@
         <!--===============================================================================================-->
         <div class="modal-body">
             <div class="skn-switch-roles-cnt">
-                <a routerLink="/sme/calibrate-documents" class="skn-switch-roles-box" (click)="smenavigate()">
+                <a routerLink="/sme/calibrate-documents" class="skn-switch-roles-box" >
                     <img src="../assets/images/icon-sme.svg" class="skn-icon-36" />
                     <div class="skn-switch-roles-text mt-2">SME</div>
                 </a>

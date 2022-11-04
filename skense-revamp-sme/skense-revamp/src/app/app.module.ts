@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { DataTablesModule } from 'angular-datatables';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule } from './Modules/login/login.module';
@@ -11,6 +10,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './Modules/core/http/jwt.interceptor';
 import { HeaderComponent } from './Modules/shared/header/header.component';
 import { FooterComponent } from './Modules/shared/footer/footer.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { FooterComponent } from './Modules/shared/footer/footer.component';
     BrowserAnimationsModule,  
     ToastrModule.forRoot(),  
     DataTablesModule,
-    LoginModule
+    LoginModule,
+    CommonModule
     
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true}],

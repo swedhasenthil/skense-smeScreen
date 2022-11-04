@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-header',
@@ -12,11 +13,17 @@ export class HeaderComponent implements OnInit{
   documentId:any;
   userName:any;
   roleSme: any;
-  constructor(public router: Router,) { this.routePath = router.url;}
+  userId: any;
+  showMore:any;
+  notificationMessages:any[];
+  constructor(public router: Router,
+    public sharedService: SharedService) { this.routePath = router.url;}
 
 
   ngOnInit(): void {
     this.getUserName();
+    this.userId= localStorage.getItem('user_id')
+    console.log(this.userId)
   }
   ngDoCheck(){
     this.displayList = localStorage.getItem('displayList');
@@ -34,5 +41,20 @@ export class HeaderComponent implements OnInit{
   smenavigate(){
     this.roleSme = "SME"
   }
-
-}
+  getAllNotificationsOfUser(markAsRead?:boolean){
+    this.sharedService.getNotifications(this.userId).subscribe((res :any)=>{
+      this.notificationMessages = res.notifications;
+      console.log("notification of list",this.notificationMessages)
+    })
+  }
+  getAllUserRoles(){
+  this.sharedService.getCurrentUserRoles({ user_id: this.userId })
+  .subscribe(
+    (data:any) => {
+      console.log(data)
+})
+  }
+  logout(){
+    
+  }
+  }
